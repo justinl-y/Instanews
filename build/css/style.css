@@ -74,6 +74,7 @@ table {
   font-weight: bold;
   font-style: italic; }
 
+/* base styles */
 * {
   box-sizing: border-box;
   outline: none; }
@@ -126,3 +127,7 @@ footer {
 @media screen and (min-width: 1000px) {
   body {
     background-color: darkgreen; } }
+
+/* header styles */
+/* main styles */
+/* footer styles */
