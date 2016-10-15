@@ -11,4 +11,4 @@ ehthumbs.db
 node_modules/
 #ignore project system folders
 .idea
-assets
+concepts
