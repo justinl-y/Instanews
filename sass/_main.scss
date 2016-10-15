@@ -1,0 +1,91 @@
+$color-one: orange;
+$color-two: burlywood;
+$color-three: darkorchid;
+$color-four: black;
+$color-five: skyblue;
+
+$base-font: "Open Sans Light";
+$base-font-size: 16px;
+$base-text-color: #ffffff;
+
+$footer-text-colour: #c2c2c2;
+$background-color: black;
+
+
+* {
+  box-sizing: border-box;
+  outline: none;
+
+}
+
+/*mobile size css*/
+
+body {
+  font-size: $base-font-size;
+  background-color: $background-color;
+
+  color: $base-text-color;
+
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+}
+
+.seo-description{
+  display: none;
+}
+
+header {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    //max-width: 50%;
+    //height: auto;
+  }
+
+  form {
+    //text-align: center;
+    //width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+
+  color: $footer-text-colour;
+
+  p span {
+    text-transform: uppercase;
+  }
+}
+
+
+
+/*tablet size css*/
+@media screen and (min-width: 600px) {
+
+  body {
+    background-color: $color-three;
+  }
+
+  header {
+    flex-flow: row;
+  }
+
+}
+
+/*desktop size css*/
+@media screen and (min-width: 1000px) {
+
+  body {
+    background-color: $color-two;
+  }
+
+}
