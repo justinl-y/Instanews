@@ -1,29 +1,29 @@
-$color-one: orange;
-$color-two: burlywood;
-$color-three: darkorchid;
-$color-four: black;
-$color-five: skyblue;
+$background-color-tablet: darkblue;
+$background-color-desktop: darkgreen;
 
-$base-font: "Open Sans";
+$base-font: "Open Sans", Helvetica, sans-serif;
 $base-font-size: 16px;
 $base-text-color: #ffffff;
 
-$footer-text-colour: #c2c2c2;
 $background-color: black;
+
+$footer-text-colour: #c2c2c2;
 
 
 * {
   box-sizing: border-box;
   outline: none;
-
 }
 
 /*mobile size css*/
 
 body {
   font-size: $base-font-size;
-  background-color: $background-color;
+  font-family: $base-font;
+  //font-weight: normal;
+  //font-style: normal;
 
+  background-color: $background-color;
   color: $base-text-color;
 
   //display: flex;
@@ -72,7 +72,7 @@ footer {
 @media screen and (min-width: 600px) {
 
   body {
-    background-color: $color-three;
+    background-color: $background-color-tablet;
   }
 
   header {
@@ -85,7 +85,7 @@ footer {
 @media screen and (min-width: 1000px) {
 
   body {
-    background-color: $color-five;
+    background-color: $background-color-desktop;
   }
 
 }
