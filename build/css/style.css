@@ -101,20 +101,38 @@ header {
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: center;
-      justify-content: center; }
+      justify-content: center;
+  height: 90vh;
+  padding: 2rem; }
+  header img {
+    padding-bottom: 1rem; }
   header form {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
         justify-content: center;
     -ms-flex-flow: column nowrap;
-        flex-flow: column nowrap; }
+        flex-flow: column nowrap;
+    margin-bottom: 1rem; }
+    header form h2 {
+      margin-bottom: 1rem;
+      font-size: 0.75rem; }
 
 main .newsItems {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: row wrap;
-      flex-flow: row wrap; }
+      flex-flow: row wrap;
+  margin: 0 auto; }
+  main .newsItems .loading {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    width: 25%;
+    height: 25%; }
 
 main .newsItem {
   -ms-flex: 1 0 100%;
@@ -141,8 +159,13 @@ main .newsItemTextFormatting {
 footer {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
+      align-items: center;
   -ms-flex-pack: center;
       justify-content: center;
+  height: 10vh;
+  padding: 0 2rem;
+  font-size: 0.8rem;
   color: #c2c2c2; }
   footer span {
     text-transform: uppercase; }

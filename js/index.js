@@ -18,6 +18,8 @@ $(document).ready(function() {
         console.log(textSelected);
     });*/
 
+    //$('.loading').hide();
+
     $("#sections-form").on("change", "select", function (e) {
         e.preventDefault();
 
@@ -29,123 +31,101 @@ $(document).ready(function() {
         //console.log(selectText);
         //console.log(selectName);
 
+        $('.loading').show();
+
         var sectionName = $(e.target).val();
-
-        var url = "https://api.nytimes.com/svc/topstories/v2/" + sectionName + ".json";
-        url += "?" + $.param({
-                "api-key": "e969eed331bd4fc8a6764edfb463db8b"
-            });
-
-        //console.log(url);
-
         var $newsItemsList = $(".newsItems");
 
-        $.ajax({
-            url: url,
-            method: "GET"
-        }).done(function(result) {
-            //console.log(result);
+        if (sectionName == "0") {
+            //remove data on default value
+            $newsItemsList.empty();
 
-            if (result.num_results === 0) {
-                $newsItemsList.empty().append("<li>Sorry. No news items found.</li>");
-            }  else {
-                //set up variables
-                var newsItemsList = result.results;
-                var newsItems = [];
-                var newsItem = {};
+        } else {
 
-                //console.log(newsItemsList);
-
-                //extract news items from news listing json
-                $.each(newsItemsList, function (key) { //, value
-                    //console.log(key);
-                    //console.log(newsItemsList[key].url);
-
-                    if (newsItemsList[key].multimedia.length !== 0) {
-                        newsItem = {abstract: newsItemsList[key].abstract,
-                                        image: newsItemsList[key].multimedia[4].url,
-                                        url: newsItemsList[key].url,
-                                        urlTitle: newsItemsList[key].title};
-
-                        newsItems.push(newsItem);
-                    }
+            //set up url to connect to nyt
+            var url = "https://api.nytimes.com/svc/topstories/v2/" + sectionName + ".json";
+            url += "?" + $.param({
+                    "api-key": "e969eed331bd4fc8a6764edfb463db8b"
                 });
 
-                var newsItemsMarkup = '';
+            //begin ajax call
+            $.ajax({
+                url: url,
+                method: "GET"
+            }).done(function(result) {
 
-                //get max 12 items from newsItems
-                for (var i = 0; i < 12; i++) {
+                if (result.num_results === 0) {
+                    //if no results
+                    $newsItemsList.empty().append("<li>Sorry. No news items found.</li>");
+                }  else {
 
-                    //populate image and abstract variables
-                    /*var imageMarkup = '<img src="' + newsItems[i].image + '">'; //background css
+                    var newsItemsList = result.results;
+                    var newsItems = [];
+                    var newsItem = {};
 
-                    var abstractMarkup = "<p>" + newsItems[i].abstract + "</p>" //background css
+                    //extract news items from news listing json
+                    $.each(newsItemsList, function (key) {
+                        if (newsItemsList[key].multimedia.length !== 0) {
+                            newsItem = {abstract: newsItemsList[key].abstract,
+                                image: newsItemsList[key].multimedia[4].url,
+                                url: newsItemsList[key].url,
+                                urlTitle: newsItemsList[key].title};
 
-                    //create div containing image
-                    var newsItemInnerMarkup = "<div class='newsImage'>" + imageMarkup + "</div>";
+                            newsItems.push(newsItem);
+                        }
+                    });
 
-                    //add div to containing <a href> of news url
-                    var newsItemOuterMarkup = '<a href="' +
-                                                    newsItems[i].url +
-                                                    '" class="newsItem" target="_blank" title="' + newsItems[i].urlTitle + '">' +
-                                                    newsItemInnerMarkup.toString() +
-                                                '</a>';
+                    var newsItemsMarkup = '';
 
-                    //create block of markup
-                    newsItemsMarkup += newsItemOuterMarkup.toString();*/
+                    //get max 12 items from newsItems
+                    for (var i = 0; i < 12; i++) {
+                        //create span of abstract text
+                        var newsAbstract = '<span class="newsItemTextFormatting">' + newsItems[i].abstract + '</span>';
 
+                        //create news item div id number for adding image background
+                        var newsItemID = "newsItem" + (i + 1);
 
+                        //create news image div and add span of news abstract
+                        var newsItemInnerMarkup = '<div class="newsImage" id="' + newsItemID + '">' + newsAbstract + '</div>';
 
+                        //create a href to containing news url and child divs
+                        var newsItemOuterMarkup = '<a href="' +
+                            newsItems[i].url +
+                            '" class="newsItem" target="_blank" title="' + newsItems[i].urlTitle + '">' +
+                            newsItemInnerMarkup +
+                            '</a>';
 
+                        newsItemsMarkup += newsItemOuterMarkup;
+                    }
 
-                    //create span of abstract text
-                    var newsAbstract = '<span class="newsItemTextFormatting">' + newsItems[i].abstract + '</span>';
+                    //append block of markup to index.html
+                    $newsItemsList.empty().append(newsItemsMarkup);
 
-                    //create news item div id number for adding image background
-                    var newsItemID = "newsItem" + (i + 1);
+                    //change css for appended markup
+                    for (var j = 0; j < 12; j++) {
+                        var newsItemID2 = "#newsItem" + (j + 1).toString();
 
-                    //create news image div
-                    //var newsItemInnerMarkup = '<div class="newsImage" id="' + newsItemID + '"></div>';
+                        var newsImageURL = "url(" + newsItems[j].image + ")";
 
-                    //create news image div and add span of news abstract
-                    var newsItemInnerMarkup = '<div class="newsImage" id="' + newsItemID + '">' + newsAbstract + '</div>';
+                        var $newsImage = $(newsItemID2).css("background-image", newsImageURL);
 
-                    var newsItemOuterMarkup = '<a href="' +
-                                                    newsItems[i].url +
-                                                    '" class="newsItem" target="_blank" title="' + newsItems[i].urlTitle + '">' +
-                                                    newsItemInnerMarkup +
-                                                '</a>';
+                        //console.log(newsImageURL);//
 
-                    newsItemsMarkup += newsItemOuterMarkup;
+                        //console.log(newsItems[j].image);
+                        //console.log($newsImage.css("background"));
+
+                        //url("../images/product-categories/sale-category.jpg") no-repeat center center
+                    }
+
                 }
+            }).fail(function(err) {
+                throw err;
 
-                //console.log(newsItemsMarkup);
-
-                //append block of markup to index.html
-                $newsItemsList.empty().append(newsItemsMarkup);
-
-                for (var j = 0; j < 12; j++) {
-                    var newsItemID2 = "#newsItem" + (j + 1).toString();
-
-                    var newsImageURL = "url(" + newsItems[j].image + ")";
-
-                    var $newsImage = $(newsItemID2).css("background-image", newsImageURL);
-
-                    //console.log(newsImageURL);//
-
-                    //console.log(newsItems[j].image);
-                    //console.log($newsImage.css("background"));
-
-                    //url("../images/product-categories/sale-category.jpg") no-repeat center center
-                }
-
-            }
-
-        }).fail(function(err) {
-            throw err;
-
-            //$newsItemsList.empty().append('<li>Sorry. No an error has occured.</li>');
-        });
+                //$newsItemsList.empty().append('<li>Sorry. No an error has occured.</li>');
+            }).always(function() {
+                $('.loading').hide();
+            });
+        }
     });
 
 });

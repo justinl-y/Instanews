@@ -46,28 +46,57 @@ body {
 }
 
 header {
-  //align-self: flex-start;
-
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
 
-  form {
-    //text-align: center;
-    //width: 300px;
+  height: 90vh;
+  padding: 2rem;
 
+  img {
+    //text-align: center;
+    padding-bottom: 1rem;
+    //transition: all .5s .5s ease-out;
+  }
+
+  form {
     display: flex;
     justify-content: center;
     flex-flow: column nowrap;
+
+    //text-align: center;
+    //width: 300px;
+
+
+    margin-bottom: 1rem;
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 0.75rem;
+    }
   }
 }
 
 main {
 
+
   .newsItems {
     display: flex;
     flex-flow: row wrap;
+
+    margin: 0 auto;
+
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      //text-align: center;
+
+      width: 25%;
+      height: 25%;
+    }
   }
 
   .newsItem {
@@ -100,10 +129,14 @@ main {
 }
 
 footer {
-  //align-self: flex-end;
-
   display: flex;
+  align-items: center;
   justify-content: center;
+
+  height: 10vh;
+
+  padding: 0 2rem;
+  font-size: 0.8rem;
 
   color: $footer-text-colour;
 
