@@ -18,7 +18,9 @@ $(document).ready(function() {
         console.log(textSelected);
     });*/
 
-    //$('.loading').hide();
+    var $loadingImage = $('.loadingImage');
+
+    $loadingImage.hide();
 
     $("#sections-form").on("change", "select", function (e) {
         e.preventDefault();
@@ -31,16 +33,14 @@ $(document).ready(function() {
         //console.log(selectText);
         //console.log(selectName);
 
-        $('.loading').show();
-
         var sectionName = $(e.target).val();
         var $newsItemsList = $(".newsItems");
 
         if (sectionName == "0") {
             //remove data on default value
             $newsItemsList.empty();
-
         } else {
+            $loadingImage.show();
 
             //set up url to connect to nyt
             var url = "https://api.nytimes.com/svc/topstories/v2/" + sectionName + ".json";
@@ -123,7 +123,7 @@ $(document).ready(function() {
 
                 //$newsItemsList.empty().append('<li>Sorry. No an error has occured.</li>');
             }).always(function() {
-                $('.loading').hide();
+                $loadingImage.hide();
             });
         }
     });

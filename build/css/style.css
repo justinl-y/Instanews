@@ -104,7 +104,7 @@ header {
       justify-content: center;
   height: 90vh;
   padding: 2rem; }
-  header img {
+  header .logo {
     padding-bottom: 1rem; }
   header form {
     display: -ms-flexbox;
@@ -123,16 +123,14 @@ main .newsItems {
   display: flex;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
-  margin: 0 auto; }
-  main .newsItems .loading {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-pack: center;
-        justify-content: center;
-    width: 25%;
-    height: 25%; }
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+main .loadingImage {
+  width: 25%;
+  height: 25%; }
 
 main .newsItem {
   -ms-flex: 1 0 100%;
