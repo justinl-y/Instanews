@@ -56,7 +56,7 @@ header {
     //transition: all .5s .5s ease-out;
   }
 
-  form {
+  .sections-form {
     display: flex;
     justify-content: center;
     flex-flow: column nowrap;
@@ -71,7 +71,6 @@ header {
 }
 
 main {
-
   .newsItems {
     display: flex;
     flex-flow: row wrap;
@@ -114,7 +113,6 @@ main {
     line-height: 1.2rem;
     background-color: rgba(0,0,0,0.5);
   }
-
 }
 
 footer {
@@ -148,7 +146,7 @@ footer {
 
   main {
     .newsItem {
-      flex: 1 0 50%;
+      flex: 1 0 33%;
     }
   }
 }
@@ -160,10 +158,18 @@ footer {
     background-color: $background-color-desktop;
   }
 
+  header {
+    justify-content: flex-start;
+  }
+
   main {
     .newsItem {
       flex: 1 0 25%;
     }
+  }
+
+  footer {
+    justify-content: flex-start;
   }
 
 }

@@ -1,7 +1,5 @@
 "use strict";
 
-//console.log('I\'m alive js');
-
 $(document).ready(function() {
     //console.log('I\'m alive jquery');
 
@@ -60,20 +58,78 @@ $(document).ready(function() {
                     $newsItemsList.empty().append("<p>Sorry. No news items found.</p>");
                 }  else {
 
-                    //change header css
-                    $("header").css({"padding-top" : "2rem",
-                                        "padding-bottom" : "1rem",
-                                        "height": "auto"
-                                    });
+                    //window resize function
+                    var existingScreenSize = 0;
 
-                    $(".logo").css({"height" : "150px",
+                    $(window).width(function() {
+                        var currentScreenSize = 0;
+
+                        if ($(this).width() < 600) {
+                            currentScreenSize = 1;
+
+                            if (!(currentScreenSize === existingScreenSize)) {
+                                existingScreenSize = currentScreenSize;
+
+                                $("header").css({"padding-top" : "2rem",
+                                    "padding-bottom" : "1rem",
+                                    "height": "auto"
+                                });
+
+                                $(".logo").css({"height" : "150px",
                                     "width" : "auto",
                                     "padding-bottom" : "1rem"
-                                    });
+                                });
 
-                    $("header form").css({"margin-bottom" : "1rem"
-                                    });
+                                $("#sections-form").css({"margin-left" : "0"});
+                                $("#sections-form").css({"margin-bottom" : "1rem"});
 
+                                $("#sections-form h2").css({"margin-bottom" : "1rem"});
+
+                            }
+                        } else if ($(this).width() >= 600 && $(this).width() < 1000) {
+                            currentScreenSize = 2;
+
+                            if (!(currentScreenSize === existingScreenSize)) {
+                                existingScreenSize = currentScreenSize;
+
+                                $("header").css({"padding-top" : "2rem",
+                                    "padding-bottom" : "1rem",
+                                    "height": "auto"
+                                });
+
+                                $(".logo").css({"height" : "75px",
+                                    "width" : "auto",
+                                    "padding-bottom" : "1rem"
+                                });
+
+                                $("#sections-form").css({"margin-left" : "2rem"});
+
+                                $("#sections-form h2").css({"margin-bottom" : "0.75rem"});
+
+                            }
+                        } else if ($(this).width() >= 1000 ) {
+                            currentScreenSize = 3;
+
+                            if (!(currentScreenSize === existingScreenSize)) {
+                                existingScreenSize = currentScreenSize;
+
+                                $("header").css({"padding-top" : "2rem",
+                                    "padding-bottom" : "1rem",
+                                    "height": "auto"
+                                });
+
+                                $(".logo").css({"height" : "75px",
+                                    "width" : "auto",
+                                    "padding-bottom" : "1rem"
+                                });
+
+                                $("#sections-form").css({"margin-left" : "2rem"});
+
+                                $("#sections-form h2").css({"margin-bottom" : "0.75rem"});
+
+                            }
+                        }
+                    });
 
                     var newsItemsList = result.results;
                     var newsItems = [];
@@ -141,6 +197,83 @@ $(document).ready(function() {
             }).always(function() {
                 $loadingImage.hide();
             });
+        }
+    });
+
+    //css for screen resize and selected data
+    var existingScreenSize = 0
+
+    $(window).resize(function() {
+        var currentScreenSize = 0;
+
+        if ($("#sections").val() !== "0") {
+
+            if ($(this).width() < 600) {
+                currentScreenSize = 1;
+
+                if (!(currentScreenSize === existingScreenSize)) {
+                    existingScreenSize = currentScreenSize;
+                    $("header").css({
+                        "padding-top": "2rem",
+                        "padding-bottom": "1rem",
+                        "height": "auto"
+                    });
+
+                    $(".logo").css({
+                        "height": "150px",
+                        "width": "auto",
+                        "padding-bottom": "1rem"
+                    });
+
+                    $("#sections-form").css({"margin-left": "0"});
+                    $("#sections-form").css({"margin-bottom": "1rem"});
+
+                    $("#sections-form h2").css({"margin-bottom": "1rem"});
+                }
+            } else if ($(this).width() >= 600 && $(this).width() < 1000) {
+                currentScreenSize = 2;
+
+                if (!(currentScreenSize === existingScreenSize)) {
+                    existingScreenSize = currentScreenSize;
+
+                    $("header").css({
+                        "padding-top": "2rem",
+                        "padding-bottom": "1rem",
+                        "height": "auto"
+                    });
+
+                    $(".logo").css({
+                        "height": "75px",
+                        "width": "auto",
+                        "padding-bottom": "1rem"
+                    });
+
+                    $("#sections-form").css({"margin-left": "2rem"});
+
+                    $("#sections-form h2").css({"margin-bottom": "0.75rem"});
+                }
+            } else if ($(this).width() >= 1000) {
+                currentScreenSize = 3;
+
+                if (!(currentScreenSize === existingScreenSize)) {
+                    existingScreenSize = currentScreenSize;
+                    $("header").css({
+                        "padding-top": "2rem",
+                        "padding-bottom": "1rem",
+                        "height": "auto"
+                    });
+
+                    $(".logo").css({
+                        "height": "75px",
+                        "width": "auto",
+                        "padding-bottom": "1rem"
+                    });
+
+                    $("#sections-form").css({"margin-left": "2rem"});
+
+                    $("#sections-form h2").css({"margin-bottom": "0.75rem"});
+                }
+            }
         }
     });
 
