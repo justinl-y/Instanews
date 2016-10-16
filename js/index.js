@@ -54,6 +54,8 @@ $(document).ready(function() {
                 var newsItems = [];
                 var newsItem = {};
 
+                //console.log(newsItemsList);
+
                 //extract news items from news listing json
                 $.each(newsItemsList, function (key) { //, value
                     //console.log(key);
@@ -62,7 +64,8 @@ $(document).ready(function() {
                     if (newsItemsList[key].multimedia.length !== 0) {
                         newsItem = {abstract: newsItemsList[key].abstract,
                                         image: newsItemsList[key].multimedia[4].url,
-                                        url: newsItemsList[key].url};
+                                        url: newsItemsList[key].url,
+                                        urlTitle: newsItemsList[key].title};
 
                         newsItems.push(newsItem);
                     }
@@ -81,14 +84,18 @@ $(document).ready(function() {
                     var newsItemInnerMarkup = "<div>" + imageMarkup + "</div>";
 
                     //add div to containing <a href> of news url
-                    var newsItemOuterMarkup = '<a href="' + newsItems[i].url + '">' + newsItemInnerMarkup.toString() + '</a>';
+                    var newsItemOuterMarkup = '<a href="' +
+                                                    newsItems[i].url +
+                                                    '" target="_blank" title="' + newsItems[i].urlTitle + '">' +
+                                                    newsItemInnerMarkup.toString() +
+                                                '</a>';
 
                     //create block of markup
                     newsItemsMarkup += newsItemOuterMarkup.toString();
 
                 }
 
-                console.log(newsItemsMarkup);
+                //console.log(newsItemsMarkup);
 
                 //append block of markup to index.html
                 $newsItemsList.empty().append(newsItemsMarkup);
