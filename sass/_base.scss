@@ -38,6 +38,8 @@ body {
 }
 
 header {
+  //align-self: flex-start;
+
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -51,19 +53,29 @@ header {
   form {
     //text-align: center;
     //width: 300px;
+
     display: flex;
     justify-content: center;
     flex-flow: column nowrap;
   }
 }
 
+main {
+
+
+
+
+}
+
 footer {
+  //align-self: flex-end;
+
   display: flex;
   justify-content: center;
 
   color: $footer-text-colour;
 
-  p span {
+  span {
     text-transform: uppercase;
   }
 }

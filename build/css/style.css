@@ -112,7 +112,7 @@ footer {
   -ms-flex-pack: center;
       justify-content: center;
   color: #c2c2c2; }
-  footer p span {
+  footer span {
     text-transform: uppercase; }
 
 /*tablet size css*/
