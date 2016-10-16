@@ -61,7 +61,8 @@ $(document).ready(function() {
                 }  else {
 
                     //change header css
-                    $("header").css({"padding" : "1rem",
+                    $("header").css({"padding-top" : "2rem",
+                                        "padding-bottom" : "1rem",
                                         "height": "auto"
                                     });
 

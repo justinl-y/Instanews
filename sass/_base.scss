@@ -1,18 +1,16 @@
 /* base styles */
-
 $background-color-tablet: darkblue;
 $background-color-desktop: darkgreen;
 
-$base-font: "Open Sans", Helvetica, sans-serif;
+$font-family-base: "Open Sans", Helvetica, sans-serif;
 
-$mobile-font-size: 14px;
-$base-font-size: 16px;
-$base-text-color: #ffffff;
+$font-size-mobile: 14px;
+$font-size-base: 16px;
+
+$text-color-base: #ffffff;
+$text-colour-footer: #c2c2c2;
 
 $background-color: black;
-
-$footer-text-colour: #c2c2c2;
-
 
 * {
     box-sizing: border-box;
@@ -20,20 +18,19 @@ $footer-text-colour: #c2c2c2;
 }
 
 /*mobile size css*/
-
 body {
-  font-size: $mobile-font-size;
-  font-family: $base-font;
+  font-size: $font-size-mobile;
+  font-family: $font-family-base;
 
   background-color: $background-color;
-  color: $base-text-color;
+  color: $text-color-base;
 
   a:link {
-    color: $base-text-color;
+    color: $text-color-base;
   }
 
   a:visited {
-    color: $base-text-color;
+    color: $text-color-base;
   }
 }
 
@@ -51,11 +48,12 @@ header {
   padding: 2rem;
 
   .logo {
-    padding-bottom: 1rem;
-    //transition: all .5s .5s ease-out;
-    width: 60%;
-    height: auto;
+    height: 200px;
+    width: auto;
 
+    padding-bottom: 1rem;
+
+    //transition: all .5s .5s ease-out;
   }
 
   form {
@@ -64,9 +62,6 @@ header {
     flex-flow: column nowrap;
 
     margin-bottom: 2rem;
-
-    //text-align: center;
-    //width: 300px;
 
     h2 {
       margin-bottom: 1rem;
@@ -132,22 +127,19 @@ footer {
   padding: 0 2rem;
   font-size: 0.8rem;
 
-  color: $footer-text-colour;
+  color: $text-colour-footer;
 
   span {
     text-transform: uppercase;
   }
 }
 
-
-
 /*tablet size css*/
 @media screen and (min-width: 600px) {
 
   body {
+    font-size: $font-size-base;
     background-color: $background-color-tablet;
-
-    font-size: $base-font-size;
   }
 
   header {

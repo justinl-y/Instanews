@@ -105,9 +105,9 @@ header {
   height: 90vh;
   padding: 2rem; }
   header .logo {
-    padding-bottom: 1rem;
-    width: 60%;
-    height: auto; }
+    height: 200px;
+    width: auto;
+    padding-bottom: 1rem; }
   header form {
     display: -ms-flexbox;
     display: flex;
@@ -174,8 +174,8 @@ footer {
 /*tablet size css*/
 @media screen and (min-width: 600px) {
   body {
-    background-color: darkblue;
-    font-size: 16px; }
+    font-size: 16px;
+    background-color: darkblue; }
   header {
     -ms-flex-flow: row;
         flex-flow: row; }
