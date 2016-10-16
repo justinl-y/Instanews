@@ -118,10 +118,18 @@ main .newsItem {
 
 main .newsImage {
   /*needs work*/
-  background-size: contain;
-  background-position: center center;
+  position: relative;
+  background-position: center top;
   background-repeat: no-repeat;
+  background-size: cover;
   padding-bottom: 100%; }
+
+main .newsItemTextFormatting {
+  /*text positioned at bottom*/
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translate(0, -100%); }
 
 footer {
   display: -ms-flexbox;
@@ -138,12 +146,18 @@ footer {
     background-color: darkblue; }
   header {
     -ms-flex-flow: row;
-        flex-flow: row; } }
+        flex-flow: row; }
+  main .newsItem {
+    -ms-flex: 1 0 50%;
+        flex: 1 0 50%; } }
 
 /*desktop size css*/
 @media screen and (min-width: 1000px) {
   body {
-    background-color: darkgreen; } }
+    background-color: darkgreen; }
+  main .newsItem {
+    -ms-flex: 1 0 25%;
+        flex: 1 0 25%; } }
 
 /* header styles */
 /* main styles */

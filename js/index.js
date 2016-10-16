@@ -93,9 +93,22 @@ $(document).ready(function() {
 
                     //create block of markup
                     newsItemsMarkup += newsItemOuterMarkup.toString();*/
+
+
+
+
+
+                    //create span of abstract text
+                    var newsAbstract = '<span class="newsItemTextFormatting">' + newsItems[i].abstract + '</span>';
+
+                    //create news item div id number for adding image background
                     var newsItemID = "newsItem" + (i + 1);
 
-                    var newsItemInnerMarkup = '<div class="newsImage" id="' + newsItemID + '"></div>';
+                    //create news image div
+                    //var newsItemInnerMarkup = '<div class="newsImage" id="' + newsItemID + '"></div>';
+
+                    //create news image div and add span of news abstract
+                    var newsItemInnerMarkup = '<div class="newsImage" id="' + newsItemID + '">' + newsAbstract + '</div>';
 
                     var newsItemOuterMarkup = '<a href="' +
                                                     newsItems[i].url +

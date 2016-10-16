@@ -13,24 +13,24 @@ $footer-text-colour: #c2c2c2;
 
 
 * {
-  box-sizing: border-box;
-  outline: none;
+    box-sizing: border-box;
+    outline: none;
 }
 
 /*mobile size css*/
 
 body {
-  font-size: $base-font-size;
-  font-family: $base-font;
-  //font-weight: normal;
-  //font-style: normal;
+    font-size: $base-font-size;
+    font-family: $base-font;
+    //font-weight: normal;
+    //font-style: normal;
 
-  background-color: $background-color;
-  color: $base-text-color;
+    background-color: $background-color;
+    color: $base-text-color;
 
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
 }
 
 .seo-description{
@@ -44,11 +44,6 @@ header {
   flex-flow: column;
   align-items: center;
   justify-content: center;
-
-  img {
-    //max-width: 50%;
-    //height: auto;
-  }
 
   form {
     //text-align: center;
@@ -76,11 +71,32 @@ main {
 
   .newsImage {
     /*needs work*/
-    background-size: contain;
-    background-position: center center;
+    position: relative;
+
+    background-position: center top;
     background-repeat: no-repeat;
+    background-size: cover;
+
+
 
     padding-bottom: 100%;
+  }
+
+  .newsItemTextFormatting {
+    /*text positioned at bottom*/
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    transform: translate(0, -100%);
+
+
+
+    //font-family: 'Raleway Medium', Helvetica, sans-serif;
+    //color: white;
+    //text-transform: uppercase;
+    //font-size: 1.5rem;
+    //text-shadow: 2px 2px 7px #111111;
   }
 
 }
@@ -111,6 +127,11 @@ footer {
     flex-flow: row;
   }
 
+  main {
+    .newsItem {
+        flex: 1 0 50%;
+    }
+  }
 }
 
 /*desktop size css*/
@@ -118,6 +139,12 @@ footer {
 
   body {
     background-color: $background-color-desktop;
+  }
+
+  main {
+    .newsItem {
+      flex: 1 0 25%;
+    }
   }
 
 }
