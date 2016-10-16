@@ -81,10 +81,14 @@ table {
 
 /*mobile size css*/
 body {
-  font-size: 16px;
+  font-size: 1rem;
   font-family: "Open Sans", Helvetica, sans-serif;
   background-color: black;
   color: #ffffff; }
+  body a:link {
+    color: #ffffff; }
+  body a:visited {
+    color: #ffffff; }
 
 .seo-description {
   display: none; }
@@ -117,7 +121,6 @@ main .newsItem {
       flex: 1 0 100%; }
 
 main .newsImage {
-  /*needs work*/
   position: relative;
   background-position: center top;
   background-repeat: no-repeat;
@@ -129,7 +132,11 @@ main .newsItemTextFormatting {
   position: absolute;
   top: 100%;
   left: 0;
-  transform: translate(0, -100%); }
+  transform: translate(0, -100%);
+  /*background transparent colour*/
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.5); }
 
 footer {
   display: -ms-flexbox;

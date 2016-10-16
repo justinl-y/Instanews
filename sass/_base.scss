@@ -20,7 +20,7 @@ $footer-text-colour: #c2c2c2;
 /*mobile size css*/
 
 body {
-    font-size: $base-font-size;
+    font-size: 1rem;
     font-family: $base-font;
     //font-weight: normal;
     //font-style: normal;
@@ -31,6 +31,14 @@ body {
     //display: flex;
     //align-items: center;
     //justify-content: center;
+
+    a:link {
+      color: $base-text-color;
+    }
+
+    a:visited {
+      color: $base-text-color;
+    }
 }
 
 .seo-description{
@@ -60,24 +68,18 @@ main {
   .newsItems {
     display: flex;
     flex-flow: row wrap;
-    //text-align: center;
   }
 
   .newsItem {
     flex: 1 0 100%;
-    //position: relative;
-
   }
 
   .newsImage {
-    /*needs work*/
     position: relative;
 
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-
-
 
     padding-bottom: 100%;
   }
@@ -85,18 +87,14 @@ main {
   .newsItemTextFormatting {
     /*text positioned at bottom*/
     position: absolute;
-
     top: 100%;
     left: 0;
     transform: translate(0, -100%);
 
-
-
-    //font-family: 'Raleway Medium', Helvetica, sans-serif;
-    //color: white;
-    //text-transform: uppercase;
-    //font-size: 1.5rem;
-    //text-shadow: 2px 2px 7px #111111;
+    /*background transparent colour*/
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: rgba(0,0,0,0.5);
   }
 
 }
