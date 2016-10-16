@@ -106,6 +106,23 @@ header {
     -ms-flex-flow: column nowrap;
         flex-flow: column nowrap; }
 
+main .newsItems {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap; }
+
+main .newsItem {
+  -ms-flex: 1 0 100%;
+      flex: 1 0 100%; }
+
+main .newsImage {
+  /*needs work*/
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-bottom: 100%; }
+
 footer {
   display: -ms-flexbox;
   display: flex;

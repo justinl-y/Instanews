@@ -77,28 +77,55 @@ $(document).ready(function() {
                 for (var i = 0; i < 12; i++) {
 
                     //populate image and abstract variables
-                    var imageMarkup = '<img src="' + newsItems[i].image + '">'; //background css
+                    /*var imageMarkup = '<img src="' + newsItems[i].image + '">'; //background css
+
                     var abstractMarkup = "<p>" + newsItems[i].abstract + "</p>" //background css
 
                     //create div containing image
-                    var newsItemInnerMarkup = "<div>" + imageMarkup + "</div>";
+                    var newsItemInnerMarkup = "<div class='newsImage'>" + imageMarkup + "</div>";
 
                     //add div to containing <a href> of news url
                     var newsItemOuterMarkup = '<a href="' +
                                                     newsItems[i].url +
-                                                    '" target="_blank" title="' + newsItems[i].urlTitle + '">' +
+                                                    '" class="newsItem" target="_blank" title="' + newsItems[i].urlTitle + '">' +
                                                     newsItemInnerMarkup.toString() +
                                                 '</a>';
 
                     //create block of markup
-                    newsItemsMarkup += newsItemOuterMarkup.toString();
+                    newsItemsMarkup += newsItemOuterMarkup.toString();*/
+                    var newsItemID = "newsItem" + (i + 1);
 
+                    var newsItemInnerMarkup = '<div class="newsImage" id="' + newsItemID + '"></div>';
+
+                    var newsItemOuterMarkup = '<a href="' +
+                                                    newsItems[i].url +
+                                                    '" class="newsItem" target="_blank" title="' + newsItems[i].urlTitle + '">' +
+                                                    newsItemInnerMarkup +
+                                                '</a>';
+
+                    newsItemsMarkup += newsItemOuterMarkup;
                 }
 
                 //console.log(newsItemsMarkup);
 
                 //append block of markup to index.html
                 $newsItemsList.empty().append(newsItemsMarkup);
+
+                for (var j = 0; j < 12; j++) {
+                    var newsItemID2 = "#newsItem" + (j + 1).toString();
+
+                    var newsImageURL = "url(" + newsItems[j].image + ")";
+
+                    var $newsImage = $(newsItemID2).css("background-image", newsImageURL);
+
+                    //console.log(newsImageURL);//
+
+                    //console.log(newsItems[j].image);
+                    //console.log($newsImage.css("background"));
+
+                    //url("../images/product-categories/sale-category.jpg") no-repeat center center
+                }
+
             }
 
         }).fail(function(err) {
