@@ -38,7 +38,8 @@ $(document).ready(function() {
 
         if (sectionName == "0") {
             //remove data on default value
-            $newsItemsList.empty();
+            //$newsItemsList.empty();
+            $newsItemsList.empty().append("<p>Sorry. No news items found.</p>");
         } else {
             $loadingImage.show();
 
@@ -56,8 +57,22 @@ $(document).ready(function() {
 
                 if (result.num_results === 0) {
                     //if no results
-                    $newsItemsList.empty().append("<li>Sorry. No news items found.</li>");
+                    $newsItemsList.empty().append("<p>Sorry. No news items found.</p>");
                 }  else {
+
+                    //change header css
+                    $("header").css({"padding" : "1rem",
+                                        "height": "auto"
+                                    });
+
+                    $(".logo").css({"height" : "150px",
+                                    "width" : "auto",
+                                    "padding-bottom" : "1rem"
+                                    });
+
+                    $("header form").css({"margin-bottom" : "1rem"
+                                    });
+
 
                     var newsItemsList = result.results;
                     var newsItems = [];
@@ -90,10 +105,10 @@ $(document).ready(function() {
 
                         //create a href to containing news url and child divs
                         var newsItemOuterMarkup = '<a href="' +
-                            newsItems[i].url +
-                            '" class="newsItem" target="_blank" title="' + newsItems[i].urlTitle + '">' +
-                            newsItemInnerMarkup +
-                            '</a>';
+                                                        newsItems[i].url +
+                                                        '" class="newsItem" target="_blank" title="' + newsItems[i].urlTitle + '">' +
+                                                        newsItemInnerMarkup +
+                                                        '</a>';
 
                         newsItemsMarkup += newsItemOuterMarkup;
                     }
@@ -119,9 +134,9 @@ $(document).ready(function() {
 
                 }
             }).fail(function(err) {
-                throw err;
+                //throw err;
 
-                //$newsItemsList.empty().append('<li>Sorry. No an error has occured.</li>');
+                $newsItemsList.empty().append('<p>Sorry. An error has occured.</p>');
             }).always(function() {
                 $loadingImage.hide();
             });

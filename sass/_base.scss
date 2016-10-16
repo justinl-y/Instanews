@@ -4,6 +4,8 @@ $background-color-tablet: darkblue;
 $background-color-desktop: darkgreen;
 
 $base-font: "Open Sans", Helvetica, sans-serif;
+
+$mobile-font-size: 14px;
 $base-font-size: 16px;
 $base-text-color: #ffffff;
 
@@ -20,19 +22,19 @@ $footer-text-colour: #c2c2c2;
 /*mobile size css*/
 
 body {
-    font-size: 1rem;
-    font-family: $base-font;
+  font-size: $mobile-font-size;
+  font-family: $base-font;
 
-    background-color: $background-color;
+  background-color: $background-color;
+  color: $base-text-color;
+
+  a:link {
     color: $base-text-color;
+  }
 
-    a:link {
-      color: $base-text-color;
-    }
-
-    a:visited {
-      color: $base-text-color;
-    }
+  a:visited {
+    color: $base-text-color;
+  }
 }
 
 .seo-description{
@@ -49,9 +51,11 @@ header {
   padding: 2rem;
 
   .logo {
-    //text-align: center;
     padding-bottom: 1rem;
     //transition: all .5s .5s ease-out;
+    width: 60%;
+    height: auto;
+
   }
 
   form {
@@ -59,11 +63,10 @@ header {
     justify-content: center;
     flex-flow: column nowrap;
 
+    margin-bottom: 2rem;
+
     //text-align: center;
     //width: 300px;
-
-
-    margin-bottom: 1rem;
 
     h2 {
       margin-bottom: 1rem;
@@ -112,7 +115,8 @@ main {
 
     /*background transparent colour*/
     padding: 0.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
     background-color: rgba(0,0,0,0.5);
   }
 
@@ -142,6 +146,8 @@ footer {
 
   body {
     background-color: $background-color-tablet;
+
+    font-size: $base-font-size;
   }
 
   header {
@@ -150,7 +156,7 @@ footer {
 
   main {
     .newsItem {
-        flex: 1 0 50%;
+      flex: 1 0 50%;
     }
   }
 }

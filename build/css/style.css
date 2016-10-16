@@ -81,7 +81,7 @@ table {
 
 /*mobile size css*/
 body {
-  font-size: 1rem;
+  font-size: 14px;
   font-family: "Open Sans", Helvetica, sans-serif;
   background-color: black;
   color: #ffffff; }
@@ -105,7 +105,9 @@ header {
   height: 90vh;
   padding: 2rem; }
   header .logo {
-    padding-bottom: 1rem; }
+    padding-bottom: 1rem;
+    width: 60%;
+    height: auto; }
   header form {
     display: -ms-flexbox;
     display: flex;
@@ -113,7 +115,7 @@ header {
         justify-content: center;
     -ms-flex-flow: column nowrap;
         flex-flow: column nowrap;
-    margin-bottom: 1rem; }
+    margin-bottom: 2rem; }
     header form h2 {
       margin-bottom: 1rem;
       font-size: 0.75rem; }
@@ -151,7 +153,8 @@ main .newsItemTextFormatting {
   transform: translate(0, -100%);
   /*background transparent colour*/
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
   background-color: rgba(0, 0, 0, 0.5); }
 
 footer {
@@ -171,7 +174,8 @@ footer {
 /*tablet size css*/
 @media screen and (min-width: 600px) {
   body {
-    background-color: darkblue; }
+    background-color: darkblue;
+    font-size: 16px; }
   header {
     -ms-flex-flow: row;
         flex-flow: row; }
