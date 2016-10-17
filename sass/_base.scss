@@ -61,8 +61,7 @@ header {
     width: auto;
 
     padding-bottom: 1rem;
-
-    //transition: all .5s .5s ease-out;
+    transition: all .5s .5s ease-out;
   }
 
   .sections-form {
@@ -75,6 +74,10 @@ header {
     h2 {
       text-align: center;
       margin-bottom: 1rem;
+      font-size: 0.75rem;
+    }
+
+    .holder, .heap {
       font-size: 0.75rem;
     }
   }
@@ -148,7 +151,7 @@ main {
 
     /*background transparent colour*/
     padding: 0.5rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.2rem;
     background-color: rgba(0,0,0,0.5);
   }
