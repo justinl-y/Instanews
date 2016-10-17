@@ -1,21 +1,6 @@
 "use strict";
 
 $(document).ready(function() {
-    //console.log('I\'m alive jquery');
-
-    /*$('#sections').on('change', function (e) {
-        //var optionSelected = $("option:selected", this);
-        //var valueSelected = this.value;
-        ////var textSelected = this.text;
-
-        var optionSelected = $(this).find("option:selected");
-        var valueSelected  = optionSelected.val();
-        var textSelected   = optionSelected.text();
-        console.log(optionSelected);
-        console.log(valueSelected);
-        console.log(textSelected);
-    });*/
-
     var $loadingImage = $('.loadingImage');
 
     $loadingImage.hide();
@@ -36,8 +21,8 @@ $(document).ready(function() {
 
         if (sectionName == "0") {
             //remove data on default value
-            //$newsItemsList.empty();
-            $newsItemsList.empty().append("<p>Sorry. No news items found.</p>");
+            $newsItemsList.empty();
+            //$newsItemsList.empty().append("<p>Sorry. No news items found.</p>");
         } else {
             $loadingImage.show();
 
@@ -58,77 +43,9 @@ $(document).ready(function() {
                     $newsItemsList.empty().append("<p>Sorry. No news items found.</p>");
                 }  else {
 
-                    //window resize function
-                    var existingScreenSize = 0;
-
+                    //call modify css function on screen size
                     $(window).width(function() {
-                        var currentScreenSize = 0;
-
-                        if ($(this).width() < 600) {
-                            currentScreenSize = 1;
-
-                            if (!(currentScreenSize === existingScreenSize)) {
-                                existingScreenSize = currentScreenSize;
-
-                                $("header").css({"padding-top" : "2rem",
-                                    "padding-bottom" : "1rem",
-                                    "height": "auto"
-                                });
-
-                                $(".logo").css({"height" : "150px",
-                                    "width" : "auto",
-                                    "padding-bottom" : "1rem"
-                                });
-
-                                $("#sections-form").css({"margin-left" : "0"});
-                                $("#sections-form").css({"margin-bottom" : "1rem"});
-
-                                $("#sections-form h2").css({"margin-bottom" : "1rem"});
-
-                            }
-                        } else if ($(this).width() >= 600 && $(this).width() < 1000) {
-                            currentScreenSize = 2;
-
-                            if (!(currentScreenSize === existingScreenSize)) {
-                                existingScreenSize = currentScreenSize;
-
-                                $("header").css({"padding-top" : "2rem",
-                                    "padding-bottom" : "1rem",
-                                    "height": "auto"
-                                });
-
-                                $(".logo").css({"height" : "75px",
-                                    "width" : "auto",
-                                    "padding-bottom" : "1rem"
-                                });
-
-                                $("#sections-form").css({"margin-left" : "2rem"});
-
-                                $("#sections-form h2").css({"margin-bottom" : "0.75rem"});
-
-                            }
-                        } else if ($(this).width() >= 1000 ) {
-                            currentScreenSize = 3;
-
-                            if (!(currentScreenSize === existingScreenSize)) {
-                                existingScreenSize = currentScreenSize;
-
-                                $("header").css({"padding-top" : "2rem",
-                                    "padding-bottom" : "1rem",
-                                    "height": "auto"
-                                });
-
-                                $(".logo").css({"height" : "75px",
-                                    "width" : "auto",
-                                    "padding-bottom" : "1rem"
-                                });
-
-                                $("#sections-form").css({"margin-left" : "2rem"});
-
-                                $("#sections-form h2").css({"margin-bottom" : "0.75rem"});
-
-                            }
-                        }
+                        $.fn.changeCSSOnScreenResolution();
                     });
 
                     var newsItemsList = result.results;
@@ -200,81 +117,80 @@ $(document).ready(function() {
         }
     });
 
-    //css for screen resize and selected data
-    var existingScreenSize = 0
-
+    //call modify css function on screen resize
     $(window).resize(function() {
-        var currentScreenSize = 0;
-
         if ($("#sections").val() !== "0") {
-
-            if ($(this).width() < 600) {
-                currentScreenSize = 1;
-
-                if (!(currentScreenSize === existingScreenSize)) {
-                    existingScreenSize = currentScreenSize;
-                    $("header").css({
-                        "padding-top": "2rem",
-                        "padding-bottom": "1rem",
-                        "height": "auto"
-                    });
-
-                    $(".logo").css({
-                        "height": "150px",
-                        "width": "auto",
-                        "padding-bottom": "1rem"
-                    });
-
-                    $("#sections-form").css({"margin-left": "0"});
-                    $("#sections-form").css({"margin-bottom": "1rem"});
-
-                    $("#sections-form h2").css({"margin-bottom": "1rem"});
-                }
-            } else if ($(this).width() >= 600 && $(this).width() < 1000) {
-                currentScreenSize = 2;
-
-                if (!(currentScreenSize === existingScreenSize)) {
-                    existingScreenSize = currentScreenSize;
-
-                    $("header").css({
-                        "padding-top": "2rem",
-                        "padding-bottom": "1rem",
-                        "height": "auto"
-                    });
-
-                    $(".logo").css({
-                        "height": "75px",
-                        "width": "auto",
-                        "padding-bottom": "1rem"
-                    });
-
-                    $("#sections-form").css({"margin-left": "2rem"});
-
-                    $("#sections-form h2").css({"margin-bottom": "0.75rem"});
-                }
-            } else if ($(this).width() >= 1000) {
-                currentScreenSize = 3;
-
-                if (!(currentScreenSize === existingScreenSize)) {
-                    existingScreenSize = currentScreenSize;
-                    $("header").css({
-                        "padding-top": "2rem",
-                        "padding-bottom": "1rem",
-                        "height": "auto"
-                    });
-
-                    $(".logo").css({
-                        "height": "75px",
-                        "width": "auto",
-                        "padding-bottom": "1rem"
-                    });
-
-                    $("#sections-form").css({"margin-left": "2rem"});
-
-                    $("#sections-form h2").css({"margin-bottom": "0.75rem"});
-                }
-            }
+            $.fn.changeCSSOnScreenResolution();
         }
     });
 
+    //modify css function on screen size
+    $.fn.changeCSSOnScreenResolution = function() {
+        var existingScreenSize = 0
+        var currentScreenSize = 0;
+
+        if ($(window).width() < 600) {
+            currentScreenSize = 1;
+
+            if (!(currentScreenSize === existingScreenSize)) {
+                existingScreenSize = currentScreenSize;
+                $("header").css({
+                    "padding-top": "2rem",
+                    "padding-bottom": "1rem",
+                    "height": "auto"
+                });
+
+                $(".logo").css({
+                    "height": "150px",
+                    "width": "auto",
+                    "padding-bottom": "1rem"
+                });
+
+                $("#sections-form").css({"margin-left": "0"});
+                $("#sections-form").css({"margin-bottom": "1rem"});
+                $("#sections-form h2").css({"margin-bottom": "1rem"});
+            }
+        } else if ($(window).width() >= 600 && $(window).width() < 1000) {
+            currentScreenSize = 2;
+
+            if (!(currentScreenSize === existingScreenSize)) {
+                existingScreenSize = currentScreenSize;
+
+                $("header").css({
+                    "padding-top": "2rem",
+                    "padding-bottom": "1rem",
+                    "height": "auto"
+                });
+
+                $(".logo").css({
+                    "height": "75px",
+                    "width": "auto",
+                    "padding-bottom": "1rem"
+                });
+
+                $("#sections-form").css({"margin-left": "2rem"});
+                $("#sections-form h2").css({"margin-bottom": "0.75rem"});
+            }
+        } else if ($(window).width() >= 1000) {
+            currentScreenSize = 3;
+
+            if (!(currentScreenSize === existingScreenSize)) {
+                existingScreenSize = currentScreenSize;
+                $("header").css({
+                    "padding-top": "2rem",
+                    "padding-bottom": "1rem",
+                    "height": "auto"
+                });
+
+                $(".logo").css({
+                    "height": "75px",
+                    "width": "auto",
+                    "padding-bottom": "1rem"
+                });
+
+                $("#sections-form").css({"margin-left": "2rem"});
+                $("#sections-form h2").css({"margin-bottom": "0.75rem"});
+            }
+        }
+    }
 });
