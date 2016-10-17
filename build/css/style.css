@@ -164,6 +164,13 @@ main .newsImage {
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 100%; }
+  main .newsImage span {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear; }
+  main .newsImage:hover > span {
+    visibility: visible;
+    opacity: 1; }
 
 main .newsItemTextFormatting {
   /*text positioned at bottom*/
