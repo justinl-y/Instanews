@@ -21,8 +21,8 @@ $(document).ready(function() {
 
         if (sectionName == "0") {
             //remove data on default value
-            $newsItemsList.empty();
-            //$newsItemsList.empty().append("<p>Sorry. No news items found.</p>");
+            //$newsItemsList.empty();
+            $newsItemsList.empty().append("<p>Sorry. No news items found.</p>");
         } else {
             $loadingImage.show();
 
@@ -146,9 +146,11 @@ $(document).ready(function() {
                     "padding-bottom": "1rem"
                 });
 
-                $("#sections-form").css({"margin-left": "0"});
-                $("#sections-form").css({"margin-bottom": "1rem"});
-                $("#sections-form h2").css({"margin-bottom": "1rem"});
+                $("#sections-form").css({"margin-left" : "0",
+                                            "margin-bottom" : "1rem"
+                                        });
+                //$("#sections-form").css({"margin-bottom": "1rem"});
+                $("#sections-form h2").css({"margin-bottom" : "1rem"});
             }
         } else if ($(window).width() >= 600 && $(window).width() < 1000) {
             currentScreenSize = 2;
@@ -168,8 +170,8 @@ $(document).ready(function() {
                     "padding-bottom": "1rem"
                 });
 
-                $("#sections-form").css({"margin-left": "2rem"});
-                $("#sections-form h2").css({"margin-bottom": "0.75rem"});
+                $("#sections-form").css({"margin-left" : "2rem"});
+                $("#sections-form h2").css({"margin-bottom" : "0.75rem"});
             }
         } else if ($(window).width() >= 1000) {
             currentScreenSize = 3;
@@ -188,8 +190,8 @@ $(document).ready(function() {
                     "padding-bottom": "1rem"
                 });
 
-                $("#sections-form").css({"margin-left": "2rem"});
-                $("#sections-form h2").css({"margin-bottom": "0.75rem"});
+                $("#sections-form").css({"margin-left" : "2rem"});
+                $("#sections-form h2").css({"margin-bottom" : "0.75rem"});
             }
         }
     }

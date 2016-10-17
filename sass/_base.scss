@@ -22,12 +22,24 @@ body {
   background-color: $background-color;
   color: $text-color-base;
 
-  a:link {
-    color: $text-color-base;
+  a {
+    text-decoration: none;
+
+    &:link {
+      color: $text-color-base;
+    }
+
+    &:visited {
+      color: $text-color-base;
+    }
+
+    &:hover {
+      color: $text-color-base;
+    }
   }
 
-  a:visited {
-    color: $text-color-base;
+  @media (min-width: 600px) {
+    font-size: $font-size-base;
   }
 }
 
@@ -64,6 +76,14 @@ header {
       margin-bottom: 1rem;
       font-size: 0.75rem;
     }
+  }
+
+  @media (min-width: 600px) {
+    flex-flow: row;
+  }
+
+  @media (min-width: 1000px) {
+    justify-content: flex-start;
   }
 }
 
@@ -108,6 +128,18 @@ main {
     line-height: 1.2rem;
     background-color: rgba(0,0,0,0.5);
   }
+
+  @media (min-width: 600px) {
+    .newsItem {
+      flex: 1 0 33%;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .newsItem {
+      flex: 1 0 25%;
+    }
+  }
 }
 
 footer {
@@ -125,41 +157,8 @@ footer {
   span {
     text-transform: uppercase;
   }
-}
 
-/*tablet size css*/
-@media screen and (min-width: 600px) {
-
-  body {
-    font-size: $font-size-base;
-  }
-
-  header {
-    flex-flow: row;
-  }
-
-  main {
-    .newsItem {
-      flex: 1 0 33%;
-    }
-  }
-}
-
-/*desktop size css*/
-@media screen and (min-width: 1000px) {
-
-  header {
+  @media (min-width: 1000px) {
     justify-content: flex-start;
   }
-
-  main {
-    .newsItem {
-      flex: 1 0 25%;
-    }
-  }
-
-  footer {
-    justify-content: flex-start;
-  }
-
 }

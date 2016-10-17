@@ -85,10 +85,17 @@ body {
   font-family: "Open Sans", Helvetica, sans-serif;
   background-color: black;
   color: #ffffff; }
-  body a:link {
-    color: #ffffff; }
-  body a:visited {
-    color: #ffffff; }
+  body a {
+    text-decoration: none; }
+    body a:link {
+      color: #ffffff; }
+    body a:visited {
+      color: #ffffff; }
+    body a:hover {
+      color: #ffffff; }
+  @media (min-width: 600px) {
+    body {
+      font-size: 16px; } }
 
 .seo-description {
   display: none; }
@@ -119,6 +126,14 @@ header {
     header .sections-form h2 {
       margin-bottom: 1rem;
       font-size: 0.75rem; }
+  @media (min-width: 600px) {
+    header {
+      -ms-flex-flow: row;
+          flex-flow: row; } }
+  @media (min-width: 1000px) {
+    header {
+      -ms-flex-pack: start;
+          justify-content: flex-start; } }
 
 main .newsItems {
   display: -ms-flexbox;
@@ -157,6 +172,16 @@ main .newsItemTextFormatting {
   line-height: 1.2rem;
   background-color: rgba(0, 0, 0, 0.5); }
 
+@media (min-width: 600px) {
+  main .newsItem {
+    -ms-flex: 1 0 33%;
+        flex: 1 0 33%; } }
+
+@media (min-width: 1000px) {
+  main .newsItem {
+    -ms-flex: 1 0 25%;
+        flex: 1 0 25%; } }
+
 footer {
   display: -ms-flexbox;
   display: flex;
@@ -170,29 +195,10 @@ footer {
   color: #c2c2c2; }
   footer span {
     text-transform: uppercase; }
-
-/*tablet size css*/
-@media screen and (min-width: 600px) {
-  body {
-    font-size: 16px; }
-  header {
-    -ms-flex-flow: row;
-        flex-flow: row; }
-  main .newsItem {
-    -ms-flex: 1 0 33%;
-        flex: 1 0 33%; } }
-
-/*desktop size css*/
-@media screen and (min-width: 1000px) {
-  header {
-    -ms-flex-pack: start;
-        justify-content: flex-start; }
-  main .newsItem {
-    -ms-flex: 1 0 25%;
-        flex: 1 0 25%; }
-  footer {
-    -ms-flex-pack: start;
-        justify-content: flex-start; } }
+  @media (min-width: 1000px) {
+    footer {
+      -ms-flex-pack: start;
+          justify-content: flex-start; } }
 
 /* header styles */
 /* main styles */
