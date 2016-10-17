@@ -72,7 +72,7 @@ $(document).ready(function() {
                         var newsAbstract = '<span class="newsItemTextFormatting">' + newsItems[i].abstract + '</span>';
 
                         //create news item div id number for adding image background
-                        var newsItemID = "newsItem" + (i + 1);
+                        var newsItemID = "newsItem" + (i + 1).toString();
 
                         //create news image div and add span of news abstract
                         var newsItemInnerMarkup = '<div class="newsImage" id="' + newsItemID + '">' + newsAbstract + '</div>';
@@ -98,11 +98,7 @@ $(document).ready(function() {
 
                         var $newsImage = $(newsItemID2).css("background-image", newsImageURL);
 
-                        //console.log(newsImageURL);//
-
-                        //console.log(newsItems[j].image);
-                        //console.log($newsImage.css("background"));
-
+                        //to do add css modify for whole background property
                         //url("../images/product-categories/sale-category.jpg") no-repeat center center
                     }
 
@@ -149,7 +145,6 @@ $(document).ready(function() {
                 $("#sections-form").css({"margin-left" : "0",
                                             "margin-bottom" : "1rem"
                                         });
-                //$("#sections-form").css({"margin-bottom": "1rem"});
                 $("#sections-form h2").css({"margin-bottom" : "1rem"});
             }
         } else if ($(window).width() >= 600 && $(window).width() < 1000) {
