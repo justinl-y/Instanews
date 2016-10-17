@@ -1,7 +1,4 @@
 /* base styles */
-$background-color-tablet: darkblue;
-$background-color-desktop: darkgreen;
-
 $font-family-base: "Open Sans", Helvetica, sans-serif;
 
 $font-size-mobile: 14px;
@@ -13,8 +10,8 @@ $text-colour-footer: #c2c2c2;
 $background-color: black;
 
 * {
-    box-sizing: border-box;
-    outline: none;
+  box-sizing: border-box;
+  outline: none;
 }
 
 /*mobile size css*/
@@ -77,8 +74,6 @@ main {
 
     align-items: center;
     justify-content: center;
-
-    //margin: 0 auto;
   }
 
   .loadingImage {
