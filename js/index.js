@@ -9,6 +9,8 @@ $(document).ready(function() {
             var sectionName = val;
             var $newsItemsList = $(".newsItems");
 
+            $loadingImage.show();
+
             if (sectionName == "0") {
                 //remove data on default value
                 $newsItemsList.empty().append("<p>Sorry. No news items found.</p>");
@@ -24,6 +26,8 @@ $(document).ready(function() {
                     url: url,
                     method: "GET"
                 }).done(function(result) {
+
+                    //console.log(result);
 
                     if (result.num_results === 0) {
                         //if no results
@@ -43,9 +47,8 @@ $(document).ready(function() {
                         $.each(newsItemsList, function (key) {
                             if (newsItemsList[key].multimedia.length !== 0) {
                                 newsItem = {abstract: newsItemsList[key].abstract,
-                                    image: newsItemsList[key].multimedia[4].url,
-                                    url: newsItemsList[key].url,
-                                    urlTitle: newsItemsList[key].title};
+                                            image: newsItemsList[key].multimedia[4].url,
+                                            url: newsItemsList[key].url};
 
                                 newsItems.push(newsItem);
                             }
@@ -66,10 +69,10 @@ $(document).ready(function() {
 
                             //create a href to containing news url and child divs
                             var newsItemOuterMarkup = '<a href="' +
-                                newsItems[i].url +
-                                '" class="newsItem" target="_blank" title="' + newsItems[i].urlTitle + '">' +
-                                newsItemInnerMarkup +
-                                '</a>';
+                                                        newsItems[i].url +
+                                                        '" class="newsItem" target="_blank">' +
+                                                        newsItemInnerMarkup +
+                                                        '</a>';
 
                             newsItemsMarkup += newsItemOuterMarkup;
                         }
