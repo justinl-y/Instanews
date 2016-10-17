@@ -123,6 +123,10 @@ main {
 
     padding-bottom: 100%;
 
+    @media (min-width: 600px) {
+      padding-bottom: 125%;
+    }
+
     span {
       visibility: hidden;
       opacity: 0;

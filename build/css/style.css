@@ -164,6 +164,9 @@ main .newsImage {
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 100%; }
+  @media (min-width: 600px) {
+    main .newsImage {
+      padding-bottom: 125%; } }
   main .newsImage span {
     visibility: hidden;
     opacity: 0;
