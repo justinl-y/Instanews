@@ -1,4 +1,4 @@
-/* base styles */
+/*set variables*/
 $font-family-base: "Open Sans", Helvetica, sans-serif;
 
 $font-size-mobile: 14px;
@@ -14,7 +14,6 @@ $background-color: black;
   outline: none;
 }
 
-/*mobile size css*/
 body {
   font-size: $font-size-mobile;
   font-family: $font-family-base;
@@ -47,6 +46,7 @@ body {
   display: none;
 }
 
+/*header section css*/
 header {
   display: flex;
   flex-flow: column;
@@ -86,7 +86,6 @@ header {
       font-size: 0.75rem;
       width: 125px;
     }
-
   }
 
   @media (min-width: 600px) {
@@ -107,17 +106,19 @@ header {
 }
 
 main {
+  text-align: center;
+
+  .loadingImage {
+    width: 75px;
+    height: auto;
+  }
+
   .newsItems {
     display: flex;
     flex-flow: row wrap;
 
     align-items: center;
     justify-content: center;
-  }
-
-  .loadingImage {
-    width: 25%;
-    height: 25%;
   }
 
   .newsItem {
