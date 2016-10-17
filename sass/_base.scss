@@ -137,7 +137,6 @@ footer {
 
   body {
     font-size: $font-size-base;
-    background-color: $background-color-tablet;
   }
 
   header {
@@ -153,10 +152,6 @@ footer {
 
 /*desktop size css*/
 @media screen and (min-width: 1000px) {
-
-  body {
-    background-color: $background-color-desktop;
-  }
 
   header {
     justify-content: flex-start;

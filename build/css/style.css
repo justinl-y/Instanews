@@ -174,8 +174,7 @@ footer {
 /*tablet size css*/
 @media screen and (min-width: 600px) {
   body {
-    font-size: 16px;
-    background-color: darkblue; }
+    font-size: 16px; }
   header {
     -ms-flex-flow: row;
         flex-flow: row; }
@@ -185,8 +184,6 @@ footer {
 
 /*desktop size css*/
 @media screen and (min-width: 1000px) {
-  body {
-    background-color: darkgreen; }
   header {
     -ms-flex-pack: start;
         justify-content: flex-start; }
