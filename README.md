@@ -13,6 +13,9 @@ resolutions.
 - JQuery
 - AJAX
 - APIs
+- GULP
+- SASS
+
 
 ##Personal Learnings
 
@@ -23,7 +26,10 @@ JQuery was used on the resulting data set to filter to a required result allowin
 and JQuery array and object manipulation.
 
 Understanding of AJAX, JQuery DOM manipulation and CSS3 was gained through data set presentation using and 
-responsive web design.  
+responsive web design.
+
+GULP was used to add developer functionality for task automation.  Understanding of the creation of minified 
+SCSS and JavaScript files was gained through the install and configuration process of GULP packages.
 
 ##References
 
