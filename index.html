@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Instanews - NYT News Reader</title>
         <link href="build/css/style.min.css" rel="stylesheet">
+        <link href="libs/heapbox-0.9.4/themes/midnight_blue/css/midnight_blue.css" rel="stylesheet" media="screen">
     </head>
     <body>
         <h1 class="seo-description">Instanews</h1>
@@ -13,7 +14,7 @@
 
             <form class="sections-form" id="sections-form" action="#" method="post">
                 <h2>Choose a section:</h2>
-                <select id="sections" name="sections">
+                <select class="form-dropdown" id="sections" name="sections">
                     <option value="0">Select...</option>
                     <option value="home">Home</option>
                     <option value="opinion">Opinion</option>
@@ -41,6 +42,8 @@
         </footer>
 
         <script src="libs/jquery-3.1.1/jquery-3.1.1-min.js"></script>
+        <script src="libs/heapbox-0.9.4/src/jquery.heapbox-0.9.4.js"></script>
+
         <script src="build/js/index.min.js"></script>
     </body>
 </html>
