@@ -77,9 +77,16 @@ header {
       font-size: 0.75rem;
     }
 
-    .holder, .heap {
+    .holder {
       font-size: 0.75rem;
+      width: 100px;
     }
+
+    div.heap {
+      font-size: 0.75rem;
+      width: 125px;
+    }
+
   }
 
   @media (min-width: 600px) {
