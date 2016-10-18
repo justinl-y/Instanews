@@ -1,7 +1,7 @@
 "use strict";
 
 $(document).ready(function() {
-    var $loadingImage = $('.loadingImage');
+    var $loadingImage = $(".loadingImage");
     $loadingImage.hide();
 
     $("#sections").heapbox({
@@ -14,9 +14,12 @@ $(document).ready(function() {
             if (sectionName == "0") {
                 //remove data on default value
                 $newsItemsList.empty().append("<p>Sorry. No news items found.</p>");
+
+                $loadingImage.hide();
             } else {
                 //set up url to connect to nyt
                 var url = "https://api.nytimes.com/svc/topstories/v2/" + sectionName + ".json";
+
                 url += "?" + $.param({
                         "api-key": "e969eed331bd4fc8a6764edfb463db8b"
                     });
@@ -26,14 +29,10 @@ $(document).ready(function() {
                     url: url,
                     method: "GET"
                 }).done(function(result) {
-
-                    //console.log(result);
-
                     if (result.num_results === 0) {
                         //if no results
                         $newsItemsList.empty().append("<p>Sorry. No news items found.</p>");
                     }  else {
-
                         //call modify css function on screen size
                         $(window).width(function() {
                             $.fn.changeCSSOnScreenResolution();
@@ -54,7 +53,7 @@ $(document).ready(function() {
                             }
                         });
 
-                        var newsItemsMarkup = '';
+                        var newsItemsMarkup = "";
 
                         //get max 12 items from newsItems
                         for (var i = 0; i < 12; i++) {
