@@ -87,8 +87,8 @@ var plumberErrorHandler = {
 
 /*** watch task for tasks to watch ***/
 gulp.task('watch', function() {
-    //gulp.watch( 'js/*.js', ['js','lint'] ); //bowser-sync.reload
-    gulp.watch( 'js/*.js', ['js'] ); //bowser-sync.reload
+    gulp.watch( 'js/*.js', ['js','lint'] ); //bowser-sync.reload
+    //gulp.watch( 'js/*.js', ['js'] ); //bowser-sync.reload
     gulp.watch( 'sass/*.scss', ['sass'] );
 });
 
