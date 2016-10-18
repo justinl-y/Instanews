@@ -106,7 +106,7 @@ $(document).ready(function() {
     //call modify css function on screen resize
     $(window).resize(function() {
         if ($('#sections').val() !== '0') {
-            $.fn.changeCSSOnScreenResolution();
+            $.fn.changeCSSOnScreenResolution();//
         }
     });
 
