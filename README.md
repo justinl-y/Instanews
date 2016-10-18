@@ -24,14 +24,14 @@ and to set up the connection to the data server using AJAX and JQuery.
 JQuery was used on the resulting data set to filter to a required result allowing me to understand JavaScript 
 and JQuery array and object manipulation.
 
-Understanding of AJAX, JQuery DOM manipulation and CSS3 was gained through data set presentation using and 
-responsive web design.
+Understanding of AJAX, JQuery DOM manipulation and CSS3 was gained through data set presentation using the principles 
+of mobile-first responsive web design.
 
-Understanding of SASS was gained through process of creation of minified CSS files from SASS partials.
+Understanding of SASS was gained through the process of creating minified CSS files from SASS partials.
 
 GULP was used to add developer functionality for task automation.  Understanding of the creation of minified 
 CSS and JavaScript files was gained through the install and configuration process of GULP packages as well as 'linted'
- JavaScript files from the implementation of eslint gulp tasks
+ JavaScript files from the implementation of eslint gulp tasks.
 
 ##References
 
