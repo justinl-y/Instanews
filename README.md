@@ -13,9 +13,8 @@ resolutions.
 - JQuery
 - AJAX
 - APIs
-- GULP
 - SASS
-
+- GULP
 
 ##Personal Learnings
 
@@ -28,13 +27,18 @@ and JQuery array and object manipulation.
 Understanding of AJAX, JQuery DOM manipulation and CSS3 was gained through data set presentation using and 
 responsive web design.
 
+Understanding of SASS was gained through process of creation of minified CSS files from SASS partials.
+
 GULP was used to add developer functionality for task automation.  Understanding of the creation of minified 
-SCSS and JavaScript files was gained through the install and configuration process of GULP packages.
+CSS and JavaScript files was gained through the install and configuration process of GULP packages as well as 'linted'
+ JavaScript files from the implementation of eslint gulp tasks
 
 ##References
 
 - JQuery 3.1.1 - http://jquery.com/
 - NYT API Key - http://developer.nytimes.com/
+- Heapbox JQuery Plugin - https://plugins.jquery.com/heapbox/
+- Gulp Plugins - http://gulpjs.com/plugins/
 
 ##Known Issues
 
