@@ -111,26 +111,29 @@ header {
 main {
   text-align: center;
 
-  .loadingImage {
+  .loading-image {
     width: 75px;
     height: auto;
   }
 
-  .newsItems {
+  .news-items {
     display: flex;
     flex-flow: row wrap;
 
     align-items: center;
     justify-content: center;
+
+    h2 {
+      display: none;
+    }
   }
 
-  .newsItem {
+  .news-item {
     flex: 1 0 100%;
-
     text-align: left;
   }
 
-  .newsImage {
+  .news-item-image {
     position: relative;
 
     background-position: center top;
@@ -155,7 +158,7 @@ main {
     }
   }
 
-  .newsItemTextFormatting {
+  .news-item-text-formatting {
     position: absolute;
     top: 100%;
     left: 0;
@@ -168,13 +171,13 @@ main {
   }
 
   @media (min-width: 600px) {
-    .newsItem {
+    .news-item {
       flex: 1 0 33%;
     }
   }
 
   @media (min-width: 1000px) {
-    .newsItem {
+    .news-item {
       flex: 1 0 25%;
     }
   }

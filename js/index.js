@@ -1,13 +1,13 @@
 "use strict";
 
 $(document).ready(function() {
-    var $loadingImage = $(".loadingImage");
+    var $loadingImage = $(".loading-image");
     $loadingImage.hide();
 
     $("#sections").heapbox({
         "onChange": function(val,sEl){
             var sectionName = val;
-            var $newsItemsList = $(".newsItems");
+            var $newsItemsList = $(".news-items");
 
             $loadingImage.show();
 
@@ -58,18 +58,18 @@ $(document).ready(function() {
                         //get max 12 items from newsItems
                         for (var i = 0; i < 12; i++) {
                             //create span of abstract text
-                            var newsAbstract = '<span class="newsItemTextFormatting">' + newsItems[i].abstract + '</span>';
+                            var newsAbstract = '<span class="news-item-text-formatting">' + newsItems[i].abstract + '</span>';
 
                             //create news item div id number for adding image background
-                            var newsItemID = "newsItem" + (i + 1).toString();
+                            var newsItemID = "news-item-" + (i + 1).toString();
 
                             //create news image div and add span of news abstract
-                            var newsItemInnerMarkup = '<div class="newsImage" id="' + newsItemID + '">' + newsAbstract + '</div>';
+                            var newsItemInnerMarkup = '<div class="news-item-image" id="' + newsItemID + '">' + newsAbstract + '</div>';
 
                             //create a href to containing news url and child divs
                             var newsItemOuterMarkup = '<a href="' +
                                                         newsItems[i].url +
-                                                        '" class="newsItem" target="_blank">' +
+                                                        '" class="news-item" target="_blank">' +
                                                         newsItemInnerMarkup +
                                                         '</a>';
 
@@ -81,7 +81,7 @@ $(document).ready(function() {
 
                         //change css for appended markup
                         for (var j = 0; j < 12; j++) {
-                            var newsItemID2 = "#newsItem" + (j + 1).toString();
+                            var newsItemID2 = "#news-item-" + (j + 1).toString();
 
                             var newsImageURL = "url(" + newsItems[j].image + ")";
 
