@@ -32,20 +32,20 @@ gulp.task('sass', function() {
 
 /*** browserSync task ***/
 // Static server
-gulp.task('browser-sync', function() {
-    browserSync.init({
-        server: {
-            baseDir: "./"
-        }
-    });
-});
+// gulp.task('browser-sync', function() {
+//     browserSync.init({
+//         server: {
+//             baseDir: "./"
+//         }
+//     });
+// });
 
 // or...
-/*gulp.task('browser-sync', function() {
-    browserSync.init({
-        proxy: "yourlocal.dev"
-    });
-});*/
+// gulp.task('browser-sync', function() {
+//     browserSync.init({
+//         proxy: "yourlocal.dev"
+//     });
+// });
 
 /*** js build tasks ***/
 //gulp.task('js',['lint'], function(){
@@ -88,11 +88,12 @@ var plumberErrorHandler = {
 /*** watch task for tasks to watch ***/
 gulp.task('watch', function() {
     gulp.watch( 'js/*.js', ['js','lint'] ); //bowser-sync.reload
-    //gulp.watch( 'js/*.js', ['js'] ); //bowser-sync.reload
+    gulp.watch( 'js/*.js', ['js'] ); //bowser-sync.reload
     gulp.watch( 'sass/*.scss', ['sass'] );
 });
 
 /*** initialisation of tasks ***/
 gulp.task('default', ['watch']); //,'browser-sync'
+
 
 
