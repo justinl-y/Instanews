@@ -43,3 +43,11 @@ CSS and JavaScript files was gained through the install and configuration proces
 ##Known Issues
 
 None.
+
+## Setup / Installation
+
+##### Install
+`> npm i`
+
+##### Run
+`> gulp`

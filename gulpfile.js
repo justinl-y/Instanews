@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     browserSync = require('browser-sync').create(),
@@ -7,15 +7,16 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
-    notify = require('gulp-notify');
+    notify = require('gulp-notify'),
+    babel = require('gulp-babel');
 
 /*** say hello test task ***/
-gulp.task('say_hello', function(){
+/*gulp.task('say_hello', () => {
     console.log('Hello!');
-});
+});*/
 
 /*** sass build .css tasks ***/
-gulp.task('sass', function() {
+gulp.task('sass', () => {
     gulp.src('./sass/style.scss')
         .pipe(plumber(plumberErrorHandler))
         .pipe(sass())
@@ -49,7 +50,7 @@ gulp.task('browser-sync', function() {
 
 /*** js build tasks ***/
 //gulp.task('js',['lint'], function(){
-gulp.task('js', function(){
+gulp.task('js', () => {
     gulp.src('./js/*.js')
         .pipe(uglify())
         .pipe(rename({ extname: '.min.js' }))
@@ -59,7 +60,7 @@ gulp.task('js', function(){
 });
 
 /*** gulp-eslint ***/
-gulp.task('lint', function() {
+gulp.task('lint', () => {
     // ESLint ignores files with "node_modules" paths.
     // So, it's best to have gulp ignore the directory as well.
     // Also, Be sure to return the stream from the task;
@@ -85,14 +86,27 @@ var plumberErrorHandler = {
     })
 };
 
+/*** gulp babel ***/
+const jsInput = 'js/index.js'; //add const for other js inputs
+const jsOutput = './build/js'; //add const for other js outputs
+
+gulp.task('babel', () => {
+    return gulp.src(jsInput)
+        .pipe(babel())
+        .pipe(gulp.dest(jsOutput));
+});
+
 /*** watch task for tasks to watch ***/
 gulp.task('watch', function() {
-    gulp.watch( 'js/*.js', ['js','lint'] ); //bowser-sync.reload
-    //gulp.watch( 'js/*.js', ['js'] ); //bowser-sync.reload
+    //gulp.watch( 'js/*.js', ['js','lint'] );
+    gulp.watch( 'js/*.js', ['js'] );
     gulp.watch( 'sass/*.scss', ['sass'] );
 });
 
 /*** initialisation of tasks ***/
-gulp.task('default', ['watch']); //,'browser-sync'
+gulp.task('default', ['watch','babel','lint']); //'browser-sync',
+
+
+//work on source folder for sass and js
 
 
