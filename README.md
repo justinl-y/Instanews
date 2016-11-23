@@ -1,5 +1,7 @@
 # Instanews Application - Javascript, JQuery, AJAX and APIs
 
+<kbd>![Image of Instanews](https://github.com/justinl-y/project-02/blob/master/readme-screenshot.png "Instanews")</kbd>
+
 This project was designed to demonstrate the presentation of AJAX data calls using an API to the New York Times.
 
 The website was built using mobile-first responsive web design and designed for mobile, tablet and desktop screen 
